@@ -1,7 +1,3 @@
-document.getElementById('playButton').addEventListener('click', function() {
-    const audio = new Audio('birthday_song.mp3');
-    audio.play();
-});
 
 // Particle explosion effect
 const canvas = document.getElementById('particleCanvas');
