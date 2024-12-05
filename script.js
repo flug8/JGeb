@@ -10,17 +10,18 @@ canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
 const particles = [];
-const particleCount = 100;
+const particleCount = 300; // Increase the number of particles
 
 function createParticle(x, y) {
-    const colors = ['#FF5F6D', '#FFC371', '#00CED1', '#800080', '#FFD700'];
+    const colors = ['#FF5F6D', '#FFC371', '#00CED1', '#800080', '#FFD700', '#FF69B4', '#00FF7F', '#FF4500'];
     return {
         x: x,
         y: y,
-        size: Math.random() * 5 + 2,
-        speedX: Math.random() * 3 - 1.5,
-        speedY: Math.random() * 3 - 1.5,
-        color: colors[Math.floor(Math.random() * colors.length)]
+        size: Math.random() * 10 + 5, // Increase the size range
+        speedX: (Math.random() * 6 - 3), // Increase the speed range
+        speedY: (Math.random() * 6 - 3), // Increase the speed range
+        color: colors[Math.floor(Math.random() * colors.length)],
+        alpha: 1 // Add alpha for fading effect
     };
 }
 
@@ -35,9 +36,10 @@ function updateParticles() {
     particles.forEach((particle, index) => {
         particle.x += particle.speedX;
         particle.y += particle.speedY;
-        particle.size -= 0.03;
+        particle.size -= 0.05; // Decrease size faster
+        particle.alpha -= 0.01; // Decrease alpha for fading effect
 
-        if (particle.size <= 0) {
+        if (particle.size <= 0 || particle.alpha <= 0) {
             particles.splice(index, 1);
         }
     });
@@ -48,7 +50,7 @@ function drawParticles() {
     particles.forEach(particle => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = particle.color;
+        ctx.fillStyle = `${particle.color}${Math.floor(particle.alpha * 100).toString(16)}`;
         ctx.fill();
         ctx.closePath();
     });
