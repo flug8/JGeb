@@ -36,8 +36,8 @@ function updateParticles() {
     particles.forEach((particle, index) => {
         particle.x += particle.speedX;
         particle.y += particle.speedY;
-        particle.size -= 0.05; // Decrease size faster
-        particle.alpha -= 0.01; // Decrease alpha for fading effect
+        particle.size -= 0.005; // Decrease size faster
+        particle.alpha -= 0.001; // Decrease alpha for fading effect
 
         if (particle.size <= 0 || particle.alpha <= 0) {
             particles.splice(index, 1);
