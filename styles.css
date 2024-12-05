@@ -4,15 +4,14 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f8ff;
+    background-color: #1f2020;
     font-family: 'Arial', sans-serif;
     overflow: hidden;
     position: relative;
 }
 
 .card {
-    background-color: #fff;
-    border: 2px solid #000;
+    background-color: #3c3c3c;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -29,23 +28,20 @@ h1 {
 
 p {
     font-size: 1.2em;
-    color: #333;
+    color: #eeeeee;
 }
 
 button {
     background-color: #ff6347;
     border: none;
     border-radius: 5px;
-    color: #fff;
+    color: #eeeeee;
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-button:hover {
-    background-color: #ff4500;
-}
 
 #particleCanvas {
     position: absolute;
