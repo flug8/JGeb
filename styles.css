@@ -6,6 +6,15 @@ body {
     margin: 0;
     background-color: #f0f8ff;
     font-family: 'Arial', sans-serif;
+    overflow: hidden;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
 }
 
 .card {
@@ -17,6 +26,7 @@ body {
     text-align: center;
     max-width: 400px;
     width: 100%;
+    z-index: 1;
 }
 
 h1 {
